@@ -2,11 +2,20 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+import math
 def product_of_all_other_numbers(arr):
     # Your code here
-
-    pass
-
+    newsum = []
+    for x in range(len(arr)):
+        if arr[x] > 0:
+            newsum.append((math.prod(arr)) / arr[x])
+        elif arr[x] == 0:
+            arr[x] = 1
+            newsum.append(math.prod(arr))
+            arr[x] = 0
+        else:
+            newsum.append(math.prod(arr))
+    return newsum
 
 if __name__ == '__main__':
     # Use the main function to test your implementation

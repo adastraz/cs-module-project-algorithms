@@ -3,9 +3,20 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
+    # index = 0  specific use case to bottom arr
+    # while index < len(arr):
+    #     if arr[index] == arr[index+1]:
+    #         index += 2
+    #     else:
+    #         index += 1
+    #         return arr[index-1]
+    
+    
+    num = arr[0]
+    for i in range(1, len(arr)):
+        num = num ^ arr[i]
+    return num
 
-    pass
 
 
 if __name__ == '__main__':
