@@ -10,12 +10,32 @@ def single_number(arr):
     #     else:
     #         index += 1
     #         return arr[index-1]
+    # no_dups = []
+
+    # for x in arr:
+    #     if x not in no_dups:
+    #         no_dups.append(x)
+    #     else:
+    #         no_dups.remove(x)
+    # return no_dups[0]
     
+    counts = {}
     
-    num = arr[0]
-    for i in range(1, len(arr)):
-        num = num ^ arr[i]
-    return num
+    for x in arr:
+        if x in arr:
+            if x in counts:
+                del counts[x]
+            else:
+                counts[x] = 1
+    for num in counts:
+        if counts[num] == 1:
+            return num
+
+
+    # num = arr[0]                  i do not understand what this does...
+    # for i in range(1, len(arr)):
+    #     num = num ^ arr[i]
+    # return num
 
 
 
